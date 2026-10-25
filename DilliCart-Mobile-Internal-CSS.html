@@ -1,0 +1,509 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        DELLICART
+    </title>
+    <style>
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --brand-orange: #ff7700;
+    --text: #171717;
+    --border: #e5e5e5;
+    --page-width: 1280px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #fff;
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+.site-header {
+    padding: 14px 4vw 12px;
+    background: #fff;
+}
+
+.header-top {
+    max-width: var(--page-width);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.site-logo {
+    width: 250px;
+    height: 100px;
+    object-fit: contain;
+    max-width: 45%;
+}
+
+.search-box {
+    width: min(550px, 58%);
+    height: 50px;
+    padding: 0 22px;
+    border: 1px solid #bdbdbd;
+    border-radius: 50px;
+    font-size: 18px;
+    outline-color: var(--brand-orange);
+}
+
+.site-header hr {
+    max-width: 1100px;
+    margin: 10px auto;
+    border: 0;
+    border-top: 2px solid #eee;
+}
+
+.brand-title {
+    margin: 12px 0 4px;
+    color: var(--brand-orange);
+    text-align: center;
+    font-size: clamp(36px, 5vw, 70px);
+    letter-spacing: 1px;
+}
+
+.tagline {
+    margin: 0 0 16px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.main-nav {
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding: 8px 3vw;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.main-nav h2 {
+    margin: 0;
+    padding: 12px 8px;
+    font-size: 16px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+#home {
+    border-bottom: 3px solid var(--brand-orange);
+}
+
+#deals, #bestseller, .section-title {
+    width: fit-content;
+    max-width: calc(100% - 28px);
+    margin: 28px auto 22px;
+    padding: 10px 28px;
+    border-radius: 50px;
+    background: var(--brand-orange);
+    color: #111;
+    text-align: center;
+    font-size: clamp(20px, 3vw, 35px);
+    line-height: 1.2;
+}
+
+.products, .bestsellerproducts {
+    width: min(var(--page-width), 100%);
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.product, .bestsellerproduct1 {
+    min-width: 0;
+    padding: 16px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    text-align: center;
+    background: #fff;
+}
+
+.product-image {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
+    margin: 0 auto 8px;
+    object-fit: contain;
+}
+
+.product h3, .bestsellerproduct1 h3 {
+    overflow-wrap: anywhere;
+    margin: 10px 0;
+    font-size: 17px;
+}
+
+.product h3:last-child, .bestsellerproduct1 h3:last-child {
+    color: var(--brand-orange);
+}
+
+.category-section {
+    max-width: var(--page-width);
+    margin: 28px auto;
+    padding: 0 24px;
+}
+
+.category-section .section-title {
+    margin-top: 0;
+}
+
+.category-box {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 18px;
+    align-items: center;
+    justify-items: center;
+}
+
+.category-box a {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    min-height: 90px;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.category-box img {
+    display: block;
+    width: 64px;
+    height: 64px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.category-box span {
+    color: #222;
+    font-size: 14px;
+    text-align: center;
+}
+
+.reach-title {
+    width: fit-content;
+    margin: 30px auto 12px;
+    padding: 7px 18px;
+    border-radius: 10px;
+    background: var(--brand-orange);
+    font-size: clamp(24px, 3vw, 35px);
+    text-align: center;
+}
+
+.social-link {
+    width: fit-content;
+    margin: 8px auto;
+    font-size: 18px;
+}
+
+.social-link a {
+    color: #222;
+    font-family: Verdana, sans-serif;
+}
+
+.footer {
+    margin-top: 25px;
+    padding: 28px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px 18px;
+}
+
+.footer-links a {
+    color: #222;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links a:hover, .social-link a:hover {
+    color: var(--brand-orange);
+}
+
+.footer-links span {
+    color: #777;
+}
+
+.footer hr {
+    max-width: 1170px;
+    margin: 25px auto;
+    border: 0;
+    border-top: 1px solid #ddd;
+}
+
+.footer p {
+    margin: 0;
+    color: #333;
+    font-size: 14px;
+}
+
+@media (max-width: 900px) {
+    .products, .bestsellerproducts {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+    .category-box {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .main-nav {
+        gap: 4px 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .site-header {
+        padding: 10px 14px;
+    }
+    .header-top {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .site-logo {
+        width: 190px;
+        height: 75px;
+        max-width: 80%;
+    }
+    .search-box {
+        width: 100%;
+        height: 44px;
+        font-size: 16px;
+    }
+    .brand-title {
+        margin-top: 12px;
+        font-size: 40px;
+    }
+    .tagline {
+        font-size: 14px;
+    }
+    .main-nav {
+        padding: 8px 10px;
+        gap: 4px;
+        justify-content: space-around;
+    }
+    .main-nav h2 {
+        padding: 10px 7px;
+        font-size: 12px;
+        white-space: normal;
+        text-align: center;
+    }
+    #deals, #bestseller, .section-title {
+        margin: 22px auto 16px;
+        padding: 9px 15px;
+        font-size: 20px;
+        border-radius: 28px;
+    }
+    .products, .bestsellerproducts {
+        padding: 0 12px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+    .product, .bestsellerproduct1 {
+        padding: 10px 8px;
+        border-radius: 8px;
+    }
+    .product-image {
+        height: 125px;
+        width: 100%;
+    }
+    .product h3, .bestsellerproduct1 h3 {
+        font-size: 14px;
+        margin: 8px 0;
+    }
+    .category-section {
+        margin: 22px auto;
+        padding: 0 12px;
+    }
+    .category-box {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+    }
+    .category-box a {
+        min-height: 78px;
+        padding: 8px;
+    }
+    .category-box img {
+        width: 52px;
+        height: 52px;
+    }
+    .reach-title {
+        margin-top: 24px;
+        font-size: 25px;
+    }
+    .footer {
+        padding: 22px 12px;
+    }
+    .footer-links {
+        gap: 12px;
+    }
+    .footer-links span {
+        display: none;
+    }
+    .footer-links a {
+        font-size: 13px;
+    }
+}
+
+    </style>
+
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-top">
+            <img class="site-logo" src="https://i.postimg.cc/McNCPPDy/file-00000000d40c8211ac69dc4bc154ae6d.png" alt="DilliCart logo">
+            <input class="search-box" type="search" placeholder="Search products..." aria-label="Search products">
+        </div>
+
+        <hr style=" width: 80%;height: 2px;color:whitesmoke;">
+        <h1 class="brand-title">DILLICART</h1>
+        <p class="tagline">Delhi se, Har Ghar tak</p>
+
+        <hr style="width: 80%;height: 2px;color:orange; ">
+    </header>
+    <nav class="main-nav" aria-label="Main navigation">
+        <h2 id="home">🏠︎HOME</h2>
+        <h2 id="your-orders">📦YOUR ORDERS</h2>
+        <h2 id="trending">📈TRENDING</h2>
+        <h2 id="account">👤ACCOUNT</h2>
+        <h2 id="menu">☰MENU</h2>
+        <h2 id="seller">🏪BECOME A SELLER</h2>
+    </nav>
+    <h3 id="deals">Recommended Deals For You</h3>
+
+    <main><div class="products">
+
+        <div class="product">
+            <img src="https://i.postimg.cc/FfGRYJjH/asus-rog-strix-scar-18-2024-fn2v-1200.jpg" alt="ASUS ROG Strix Scar 18 laptop" class="product-image">
+            <h3>ROG SCAR 18</h3>
+            <h3 style="color:orange;">₹5,90,000</h3>
+        </div>
+
+        <div class="product">
+            <img src="https://i.postimg.cc/LnGd94wW/IMG-805920ef-5e59-4be0-9122-2e3b3644dbe0.jpg" alt="Marshall headphones" class="product-image">
+            <h3>MARSHALL Headphones</h3>
+            <h3 style="color:orange;">₹29,499</h3>
+        </div>
+
+        <div class="product">
+            <img src="https://i.postimg.cc/Ty7Jx1H5/Screenshot-2026-10-25-16-52-58-431-com-google-android-googlequicksearchbox-edit.jpg" alt="Prestige cookware" class="product-image">
+            <h3>Prestige Cookware</h3>
+            <h3 style="color:orange;">₹2,199</h3>
+        </div>
+
+        <div class="product">
+            <img src="https://i.postimg.cc/vcVqvr22/IMG-4b76c9d8-b1e8-4301-acf6-49d6e6ddfb0b.jpg" alt="Dior T-shirt" class="product-image">
+            <h3>DIOR T-Shirt</h3>
+            <h3 style="color:orange;">₹1,35,000</h3>
+        </div>
+
+    </div></main>
+    <section class="category-section" aria-label="Shop by category">
+        <h3 class="section-title">Shop by Category</h3>
+        <div class="category-box">
+            <a href="laptops.html" aria-label="Laptops"><img src="https://i.postimg.cc/FfGRYJjH/asus-rog-strix-scar-18-2024-fn2v-1200.jpg" alt="Laptops"><span>Laptops</span></a>
+            <a href="audio.html" aria-label="Headphones"><img src="https://i.postimg.cc/LnGd94wW/IMG-805920ef-5e59-4be0-9122-2e3b3644dbe0.jpg" alt="Headphones"><span>Audio</span></a>
+            <a href="kitchen.html" aria-label="Kitchen"><img src="https://i.postimg.cc/Ty7Jx1H5/Screenshot-2026-10-25-16-52-58-431-com-google-android-googlequicksearchbox-edit.jpg" alt="Cookware"><span>Kitchen</span></a>
+            <a href="clothes.html" aria-label="Clothing"><img src="https://i.postimg.cc/vcVqvr22/IMG-4b76c9d8-b1e8-4301-acf6-49d6e6ddfb0b.jpg" alt="T-shirt"><span>Fashion</span></a>
+            <a href="fitness.html" aria-label="Fitness accessories"><img src="https://i.postimg.cc/V51nhjNh/IMG-c6516b67-48ad-4f05-81f3-7bc5eeb74abc.jpg" alt="Gym shaker"><span>Fitness</span></a>
+            <a href="bags.html" aria-label="Bags"><img src="https://i.postimg.cc/gxYYF2hW/IMG-91702f4a-785e-490f-a3d7-f6edd722da35.jpg" alt="Smart bag"><span>Bags</span></a>
+            <a href="watches.html" aria-label="Watches"><img src="https://i.postimg.cc/2bJ4Mt9s/IMG-d59097a9-f10d-4521-9e4c-7a7d3c957722.jpg" alt="J&Co watch"><span>Watches</span></a>
+            <a href="mobiles.html" aria-label="Mobile phones"><img src="https://i.postimg.cc/06Sx7KR2/IMG-1dad853b-ba14-4aaa-b396-2a22dd560f7b.png" alt="RedMagic phone"><span>Mobiles</span></a>
+        </div>
+    </section>
+    <h3 id="bestseller">Best Seller</h3>
+    <div class="bestsellerproducts">
+        <div class="bestsellerproduct1"><img src="https://i.postimg.cc/V51nhjNh/IMG-c6516b67-48ad-4f05-81f3-7bc5eeb74abc.jpg" alt="Gym shaker" class="product-image">
+            <h3>Gym Shaker</h3>
+            <h3 style="color:orange;">₹500</h3>
+        </div>
+
+        <div class="bestsellerproduct1">
+            <img src="https://i.postimg.cc/gxYYF2hW/IMG-91702f4a-785e-490f-a3d7-f6edd722da35.jpg" alt="Smart bag" class="product-image">
+            <h3>Smart Bag</h3>
+            <h3 style="color:orange;">₹1,499</h3>
+        </div>
+
+        <div class="bestsellerproduct1">
+            <img src="https://i.postimg.cc/2bJ4Mt9s/IMG-d59097a9-f10d-4521-9e4c-7a7d3c957722.jpg" alt="J&Co watch" class="product-image">
+            <h3>j&co watch</h3>
+            <h3 style="color:orange;">₹599</h3>
+        </div>
+
+        <div class="bestsellerproduct1">
+            <img src="https://i.postimg.cc/06Sx7KR2/IMG-1dad853b-ba14-4aaa-b396-2a22dd560f7b.png" alt="RedMagic 11 Pro phone" class="product-image">
+            <h3>Red Magic 11pro</h3>
+            <h3 style="color:orange;">₹1,05,000</h3>
+        </div>
+    </div>
+    <hr>
+    <hr>
+    <h2 class="reach-title">REACH US 
+    </h2>
+    <P class="social-link"><a
+            href="https://www.instagram.com/" >INSTAGRAM</a></P>
+    <P class="social-link"><a
+            href="https://www.facebook.com/" >FACEBOOK</a></P>
+    <P class="social-link"><a href="https://x.com/"
+            >X(twitter)</a></P>
+    <P class="social-link"><a
+            href="https://www.linkedin.com/login" >linkedin</a></P>
+    <footer class="footer">
+
+        <div class="footer-links">
+            <a href="#">Legal</a>
+            <span>|</span>
+
+            <a href="#">Privacy Policy</a>
+            <span>|</span>
+
+            <a href="#">Cookie Policy</a>
+            <span>|</span>
+
+            <a href="#">Preference Center</a>
+            <span>|</span>
+
+            <a href="#">Accessibility</a>
+            <span>|</span>
+
+            <a href="#">Help</a>
+            <span>|</span>
+
+            <a href="#">Contact</a>
+        </div>
+
+        <hr>
+
+        <p>© 2025 - DilliCart. All rights reserved.</p>
+
+    </footer>
+
+</body>
+
+</html>
